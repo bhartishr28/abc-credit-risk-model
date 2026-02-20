@@ -24,11 +24,11 @@ Built predictive models using historical loan data.
 
 Target variable: Default Indicator (0 = Non-Default, 1 = Default).
 
-Dataset Size: 12,497 observations
+Dataset Size: 50000 observations
 
-Non-Default: 11,423
+Non-Default: 45703
 
-Default: 1,074
+Default: 4297
 
 Default Rate: ~8.6%
 
@@ -61,7 +61,7 @@ Developed a user-friendly Streamlit application where loan officers can input:
 
 * Loan details
 
-* bBureau metrics (credit utilization, delinquency ratio, etc.)
+* Bureau metrics (credit utilization, delinquency ratio, etc.)
 
 The application outputs:
 
@@ -71,9 +71,181 @@ The application outputs:
 
 * Risk Rating
 
+### 📂 Data Sources
+
+The dataset was provided across three separate CSV files:
+
+* customers.csv → 50,000 records × 12 columns
+
+* loans.csv → 50,000 records × 15 columns
+
+* bureau_data.csv → 50,000 records × 8 columns
+
+Each dataset contains 50,000 observations and was merged using appropriate keys to create the final modeling dataset.
+  
+### Class Imbalance Analysis
+
+Non-Default (Class 0): 45,703 observations (~91.4%)
+
+Default (Class 1): 4,297 observations (~8.6%)
+
+The dataset is highly imbalanced, with default cases representing only ~8.6% of total observations.
+
+#### 🎯 Modeling Implication
+
+Class imbalance presents challenges:
+
+Models may bias toward predicting non-default.
+
+Accuracy alone becomes misleading.
+
+Recall for defaulters becomes critical.
+
+This imbalance was addressed during model development using:
+
+* Undersampling
+
+* SMOTE
+
+* SMOTE-Tomek
+
+* Class weighting
+
+* Hyperparameter tuning (Optuna)
+  
+### 🧹 Data Cleaning & Preprocessing
+
+#### Missing Value Treatment
+
+The column residence_type had 62 missing values.
+
+Since this is a categorical variable, we examined its unique categories.
+
+Missing values were imputed using the most frequent value (mode) to preserve distribution consistency.
+
+#### Feature Segmentation
+
+Features were divided into:
+
+* Continuous variables
+
+* Categorical variables
+
+This separation ensured appropriate preprocessing techniques were applied to each type.
+
+#### Preventing Data Leakage
+
+After completing data cleaning:
+
+performed the Train–Test Split before EDA and Feature Engineering (FE).
+
+This ensures that no information from the test set leaks into the training process.
+
+Maintains model integrity and realistic performance evaluation.
+
+### 📊 Univariate Analysis
+
+#### 📦 Outlier Detection – Boxplot Visualization
+
+Initial boxplots indicated potential irregularities in:
+
+* processing_fee
+
+* gst
+
+Further investigation was required.
+
+#### 📈 Outlier Detection – Histogram Analysis
+
+Observation
+
+Maximum processing_fee observed:
+₹5,293,543.52 (~52 Lakhs)
+
+This appeared unrealistic.
+
+On further inspection:
+
+Corresponding loan_amount: ₹3,626,000
+
+Processing fee exceeding loan amount → Clearly erroneous
+
+#### 🧾 Processing Fee Validation
+
+After consulting the business team:
+
+✅ Processing fee cannot exceed 3% of loan_amount
+
+We identified two irregular scenarios:
+
+processing_fee > loan_amount
+
+processing_fee > 3% of loan_amount
+
+There are 7 exceptions where the processing_fee exceeds the loan_amount. In these cases, net_disbursement, processing_fee, and loan_amount are all zero.
+
+All other invalid records were removed.
+
+#### 💰 Net Disbursement Validation
+
+Business Rule:
+
+net_disbursement should not exceed loan_amount
+
+Validation Results:
+
+✅ No violations found in training dataset
+
+✅ No violations found in test dataset
+
+This confirms data consistency for disbursement logic.
+
+#### 🧼 Cleaning Categorical Variables
+
+loan_purpose Correction
+
+Found a typo:
+
+"Personal"
+
+"Personaal"
+
+Both represent the same category.
+
+✔ Corrected "Personaal" → "Personal"
+
+Ensured categorical consistency before model training.
+
 ## Exploratory Data Analysis & Key Insights
 
 ### 📈 Insights from Continuous Variable Analysis
+
+#### Age-wise Credit Risk Analysis
+
+##### 🔍 Key Observations
+
+* Default risk decreases consistently with age.
+
+##### Age 18–25:
+
+* Highest default rate (~12%): Riskiest segment
+
+##### Age 25–45:
+
+* Gradual decline in default risk
+
+##### Age 40–50:
+
+* Moderate risk (~8%)
+
+##### Age 50+:
+
+* Safest segment (~4%)
+
+##### Age 60–70:
+
+* Smaller portfolio share and Stable and low default risk
+  
 #### Strong Predictors
 
 The following variables show strong positive relationship with default probability:
@@ -208,9 +380,9 @@ XGBoost with oversampling
 
 Hyperparameter optimization using Optuna
 
-#### 🏆 Final Model Selection
+### 🏆 Final Model Selection
 
-##### Business Objective
+#### Business Objective
 
 * Maximize Recall for Class 1 (Defaulters).
 
@@ -299,14 +471,32 @@ Deciles 9-10: Identified nearly 99% of all defaults
 
 #### 🎯 Final Model Features
 
-The selected model incorporates the following key features:
+The final Logistic Regression model was built using the following selected features:
 
-['age', 'loan_tenure_months', 'number_of_open_accounts',
- 'credit_utilization_ratio', 'loan_to_income', 'delinquency_ratio',
- 'avg_dpd_per_delinquency', 'residence_type_Owned',
- 'residence_type_Rented', 'loan_purpose_Education', 'loan_purpose_Home',
- 'loan_purpose_Personal', 'loan_type_Unsecured']
- 
+##### Continuous Features
+
+* Age
+
+* Loan Tenure (Months)
+
+* Number of Open Accounts
+
+* Credit Utilization Ratio
+
+* Loan-to-Income Ratio
+
+* Delinquency Ratio
+
+* Average DPD per Delinquency
+
+ ##### Categorical Features
+
+* Residence Type (Owned/Rented/Mortgage)
+
+* Loan Purpose (Education/Home/Personal/Auto)
+
+* Loan Type(Unsecured/Secured)
+
 ### 💼 Business Impact
 
 #### Risk Management Benefits
