@@ -441,6 +441,20 @@ Slightly lower overall accuracy
 
 However, given the stated business objective of prioritizing risk containment over portfolio growth, this trade-off is acceptable.
 
+Note: Logistic Regression was selected as the final model because it:
+
+* Meets regulatory expectations
+
+* Provides strong recall for defaulters
+
+* Is highly interpretable
+
+* Integrates naturally with credit scorecards
+
+* Offers excellent discriminatory power (ROC-AUC: 0.9838, Gini: 0.9675)
+
+While XGBoost achieved strong predictive performance, Logistic Regression aligns better with real-world credit risk governance and business requirements.
+
 ##### Rationale:
 
 Highest Recall (0.94): Captures 94% of actual defaulters
