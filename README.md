@@ -528,3 +528,78 @@ The final Logistic Regression model was built using the following selected featu
 * Opportunity Cost: Balanced against risk reduction benefits
   
 * Strategic Alignment: Supports conservative lending approach
+
+## 🛠️ **Tools & Technologies Used**
+
+Programming & Libraries
+
+**Python** – Core programming language
+
+**Pandas** – Data manipulation and preprocessing
+
+**NumPy** – Numerical computations
+
+**Scikit-learn** –
+
+1. Model evaluation
+
+2. Feature scaling
+
+3. Hyperparameter tuning (RandomizedSearchCV)
+
+**Optuna** - hyperparameter optimization software framework
+
+**Logistic Regression** and  **XGBoost** – Regression models 
+
+**Joblib** – Model and scaler persistence
+
+**Data Visualization & Analysis**
+
+**Matplotlib** – Basic plotting
+
+**Seaborn**– Statistical visualizations and EDA
+
+## **Web App & Deployment**
+
+**Streamlit** – Interactive web application
+
+**Streamlit Cloud** – Model deployment
+
+**Version Control & Collaboration**
+
+**Git** – Version control
+
+**GitHub** – Code hosting and collaboration
+
+**Development Environment**
+
+**Jupyter Notebook** – Exploratory data analysis and model development
+
+**PyCharm** - Development tool
+
+**Git Bash** – Git operations
+
+
+## 🖥️ **How to Use the App**
+
+  Open the Streamlit app in your browser through this URL : https://abc-credit-risk-model-bklzssce28hywrhsqcuxqh.streamlit.app/
+  
+  Enter customer details such as:
+  
+  Age
+  
+  Income
+
+  Loan Amount
+  
+  etc
+  
+  Click **Calculate Risk**
+  
+  View:
+  
+  Default Probability
+
+  Credit Score
+
+  Rating
