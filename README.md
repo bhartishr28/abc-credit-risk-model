@@ -1,4 +1,4 @@
-# Development of Credit Risk Model for ABC Finance
+# End-to-End Credit Risk Analytics using Python, Power BI & Streamlit
 
 ## Project Overview
 
@@ -70,6 +70,40 @@ The application outputs:
 * Credit Score
 
 * Risk Rating
+
+### 4️⃣ Interactive Power BI Dashboard
+
+Developed a four-page interactive Power BI dashboard to transform machine learning predictions into actionable business insights for credit risk monitoring and lending decisions.
+
+The dashboard includes:
+
+#### 📊 Executive Summary
+* Portfolio-level KPIs (Total Customers, Default Rate, Average Credit Score)
+* Average Probability of Default (PD)
+* Loan Recommendation Distribution (Approve / Manual Review / Reject)
+* Credit Score Distribution
+* Risk Rating Overview
+
+#### 👥 Customer & Loan Analysis
+* Customer segmentation by Age Group, Employment Status, and Residence Type
+* Loan Type and Loan Purpose distribution
+* State-wise customer analysis
+* Loan-to-Income Ratio analysis
+* Customer portfolio composition
+
+#### ⚠️ Credit Risk Analysis
+* Probability of Default (PD) Distribution
+* Average PD by Loan Type, Employment Status, Residence Type, and State
+* Credit Utilization analysis
+* Loan-to-Income vs Probability of Default relationship
+* High-Risk Customer Segmentation
+* Risk Rating Distribution
+
+#### 📈 Model Performance
+* Confusion Matrix
+* Classification Report
+* Accuracy, Precision, Recall, F1-Score, and ROC-AUC
+* Model architecture and training summary
 
 ### 📂 Data Sources
 
