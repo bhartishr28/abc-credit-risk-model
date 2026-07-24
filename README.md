@@ -71,6 +71,9 @@ The application outputs:
 
 * Risk Rating
 
+## 💻 Streamlit Application
+
+![Streamlit UI](visuals/Streamlit_UI.JPG)
 ### 4️⃣ Interactive Power BI Dashboard
 
 Developed a four-page interactive Power BI dashboard to transform machine learning predictions into actionable business insights for credit risk monitoring and lending decisions.
@@ -104,6 +107,9 @@ The dashboard includes:
 * Classification Report
 * Accuracy, Precision, Recall, F1-Score, and ROC-AUC
 * Model architecture and training summary
+
+## Credit Risk Analytics Dashboard Preview
+![Power BI Dashboard](visuals/dashboard_preview.JPG)
 
 ### 📂 Data Sources
 
@@ -562,8 +568,6 @@ The final Logistic Regression model was built using the following selected featu
 * Opportunity Cost: Balanced against risk reduction benefits
   
 * Strategic Alignment: Supports conservative lending approach
-
-## Credit Risk Analytics Dashboard Preview
 
 ## 🛠️ **Tools & Technologies Used**
 
