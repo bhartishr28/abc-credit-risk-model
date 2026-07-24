@@ -563,6 +563,8 @@ The final Logistic Regression model was built using the following selected featu
   
 * Strategic Alignment: Supports conservative lending approach
 
+## Credit Risk Analytics Dashboard Preview
+
 ## 🛠️ **Tools & Technologies Used**
 
 Programming & Libraries
