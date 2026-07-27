@@ -35,6 +35,26 @@ This project focuses on building a predictive credit risk model along with a cre
 
 The scoring methodology is inspired by industry-standard frameworks such as the CIBIL scoring system, with strong emphasis on regulatory interpretability and business alignment.
 
+## 📊 Project Snapshot
+
+| Attribute | Details |
+|-----------|---------|
+| Domain | Credit Risk Analytics |
+| Industry | Banking / NBFC |
+| Problem Type | Binary Classification |
+| Dataset Size | 50,000 Loan Applications |
+| Original Data Sources | 3 CSV Files |
+| Target Variable | Default Indicator |
+| Models Evaluated | Logistic Regression, Random Forest, XGBoost |
+| Final Model | Logistic Regression |
+| Accuracy | 93% |
+| Recall (Default) | 94% |
+| ROC-AUC | 0.9838 |
+| KS Statistic | 86.09% |
+| Gini Coefficient | 0.9675 |
+| Dashboard | Power BI |
+| Deployment | Streamlit Community Cloud |
+
 ## Scope of Work
 ### Phase 1: Development and Implementation
 ### 1️⃣ Model Development
@@ -141,6 +161,21 @@ The dataset was provided across three separate CSV files:
 * bureau_data.csv → 50,000 records × 8 columns
 
 Each dataset contains 50,000 observations and was merged using appropriate keys to create the final modeling dataset.
+
+## 🔄 Project Workflow
+
+```mermaid
+flowchart LR
+A[Raw Data]
+-->B[Data Cleaning]
+-->C[EDA]
+-->D[Feature Engineering]
+-->E[Model Training]
+-->F[Model Validation]
+-->G[Credit Scorecard]
+-->H[Power BI Dashboard]
+-->I[Streamlit Deployment]
+```
   
 ### Class Imbalance Analysis
 
