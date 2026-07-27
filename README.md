@@ -1,4 +1,23 @@
-# End-to-End Credit Risk Analytics using Python, Power BI & Streamlit
+# 💳 End-to-End Credit Risk Analytics using Python, Power BI & Streamlit
+
+<p align="center">
+
+![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)
+![Power BI](https://img.shields.io/badge/Power%20BI-Dashboard-yellow?logo=powerbi)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-ML-orange?logo=scikitlearn)
+![Streamlit](https://img.shields.io/badge/Streamlit-Deployed-red?logo=streamlit)
+
+</p>
+
+# 🚀 Live Demo
+
+### 🌐 Try the application here
+
+**Credit Risk Analytics App**
+
+https://abc-credit-risk-model-bklzssce28hywrhsqcuxqh.streamlit.app/
+
+---
 
 ## Project Overview
 
