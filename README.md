@@ -55,6 +55,32 @@ The scoring methodology is inspired by industry-standard frameworks such as the 
 | Dashboard | Power BI |
 | Deployment | Streamlit Community Cloud |
 
+## 🔄 End-to-End Workflow
+
+```text
+Raw Data
+    │
+    ▼
+Data Cleaning & Preprocessing
+    │
+    ▼
+Exploratory Data Analysis (EDA)
+    │
+    ▼
+Feature Engineering
+    │
+    ▼
+Machine Learning Model
+(Logistic Regression)
+    │
+    ▼
+Credit Score & Probability of Default
+    │
+    ├──────────────► Streamlit Web Application
+    │
+    └──────────────► Power BI Dashboard
+```
+
 ## Scope of Work
 ### Phase 1: Development and Implementation
 ### 1️⃣ Model Development
@@ -113,10 +139,54 @@ The application outputs:
 ## 💻 Streamlit Application
 
 ![Streamlit UI](visuals/Streamlit_UI.JPG)
-### 4️⃣ Interactive Power BI Dashboard
+# 4️⃣ Power BI Dashboard
 
-Developed a four-page interactive Power BI dashboard to transform machine learning predictions into actionable business insights for credit risk monitoring and lending decisions.
+The Power BI dashboard was developed to provide interactive insights into customer demographics, loan characteristics, credit risk distribution, and model performance. It enables business users and risk managers to monitor portfolio quality and make data-driven lending decisions through intuitive visualizations.
 
+> **Note:**  
+> The dashboard was developed using proprietary credit risk data provided during the project. To maintain data confidentiality, the interactive Power BI report is not publicly shared. The screenshots below demonstrate the dashboard design and analytical capabilities.
+
+---
+
+## 📈 Executive Summary
+
+<p align="center">
+  <img src="visuals/executive_summary.png" alt="Executive Summary Dashboard" width="900">
+</p>
+
+The Executive Summary provides a high-level overview of the loan portfolio, including key KPIs, customer distribution, loan performance, and default trends.
+
+---
+
+## 👥 Customer & Loan Analysis
+
+<p align="center">
+  <img src="visuals/customer_loan_analysis.png" alt="Customer and Loan Analysis Dashboard" width="900">
+</p>
+
+This dashboard analyzes customer demographics, income distribution, employment status, loan purpose, loan amount, and other borrower characteristics to identify lending patterns.
+
+---
+
+## ⚠️ Credit Risk Analysis
+
+<p align="center">
+  <img src="visuals/credit_risk_analysis.png" alt="Credit Risk Analysis Dashboard" width="900">
+</p>
+
+This report focuses on default behaviour, risk segmentation, credit score distribution, and portfolio risk indicators to support informed credit decisions.
+
+---
+
+## 📉 Model Performance
+
+<p align="center">
+  <img src="visuals/model_performance.png" alt="Model Performance Dashboard" width="900">
+</p>
+
+The Model Performance dashboard presents key evaluation metrics such as ROC-AUC, Gini Coefficient, KS Statistic, confusion matrix, and other performance indicators used to validate the credit risk model.
+
+---
 The dashboard includes:
 
 #### 📊 Executive Summary
@@ -147,8 +217,6 @@ The dashboard includes:
 * Accuracy, Precision, Recall, F1-Score, and ROC-AUC
 * Model architecture and training summary
 
-## Credit Risk Analytics Dashboard Preview
-![Power BI Dashboard](visuals/dashboard_preview.JPG)
 
 ### 📂 Data Sources
 
@@ -162,20 +230,6 @@ The dataset was provided across three separate CSV files:
 
 Each dataset contains 50,000 observations and was merged using appropriate keys to create the final modeling dataset.
 
-## 🔄 Project Workflow
-
-```mermaid
-flowchart LR
-A[Raw Data]
--->B[Data Cleaning]
--->C[EDA]
--->D[Feature Engineering]
--->E[Model Training]
--->F[Model Validation]
--->G[Credit Scorecard]
--->H[Power BI Dashboard]
--->I[Streamlit Deployment]
-```
   
 ### Class Imbalance Analysis
 
