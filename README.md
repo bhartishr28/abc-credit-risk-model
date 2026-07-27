@@ -643,7 +643,9 @@ Programming & Libraries
 
 **Optuna** - hyperparameter optimization software framework
 
-**Logistic Regression** and  **XGBoost** – Regression models 
+**Logistic Regression** – Binary classification model
+
+**XGBoost** – Gradient Boosting classification model
 
 **Joblib** – Model and scaler persistence
 
@@ -674,26 +676,30 @@ Programming & Libraries
 **Git Bash** – Git operations
 
 
-## 🖥️ **How to Use the App**
+## 🖥️ How to Use the Application
 
-  Open the Streamlit app in your browser through this URL : https://abc-credit-risk-model-bklzssce28hywrhsqcuxqh.streamlit.app/
-  
-  Enter customer details such as:
-  
-  Age
-  
-  Income
+1. Open the deployed Streamlit application.
+2. Enter customer demographic and loan information.
+3. Click **Calculate Risk**.
+4. View:
+   - Probability of Default (PD)
+   - Credit Score
+   - Risk Rating
+   - Lending Recommendation
 
-  Loan Amount
-  
-  etc
-  
-  Click **Calculate Risk**
-  
-  View:
-  
-  Default Probability
+## 💼 Key Business Outcomes
 
-  Credit Score
+- Predicts customer default risk before loan approval.
+- Supports consistent and data-driven lending decisions.
+- Generates an interpretable credit scorecard for risk segmentation.
+- Reduces potential credit losses by identifying high-risk applicants.
+- Assists portfolio monitoring through interactive Power BI dashboards.
 
-  Rating
+
+## 🚀 Future Enhancements
+
+- SHAP explainability
+- FastAPI deployment
+- Docker containerization
+- Cloud deployment (AWS/Azure)
+- Automated model monitoring
