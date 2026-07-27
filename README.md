@@ -55,30 +55,37 @@ The scoring methodology is inspired by industry-standard frameworks such as the 
 | Dashboard | Power BI |
 | Deployment | Streamlit Community Cloud |
 
-## 🔄 End-to-End Workflow
+## 🔄  End-to-End Workflow
 
-```text
-Raw Data
-    │
-    ▼
-Data Cleaning & Preprocessing
-    │
-    ▼
-Exploratory Data Analysis (EDA)
-    │
-    ▼
-Feature Engineering
-    │
-    ▼
-Machine Learning Model
-(Logistic Regression)
-    │
-    ▼
-Credit Score & Probability of Default
-    │
-    ├──────────────► Streamlit Web Application
-    │
-    └──────────────► Power BI Dashboard
+```mermaid
+flowchart TD
+
+    A[📂 Raw Customer & Loan Data]
+    --> B[🧹 Data Cleaning & Preprocessing]
+
+    B --> C[📊 Exploratory Data Analysis]
+
+    C --> D[⚙️ Feature Engineering]
+
+    D --> E[🤖 Model Development]
+
+    E --> E1[Logistic Regression]
+    E --> E2[Random Forest]
+    E --> E3[XGBoost]
+
+    E1 --> F[📈 Model Evaluation]
+    E2 --> F
+    E3 --> F
+
+    F --> G[🏆 Final Model Selection<br/>Logistic Regression]
+
+    G --> H[💳 Probability of Default]
+
+    H --> I[📉 Credit Scorecard]
+
+    I --> J[💻 Streamlit Web Application]
+
+    I --> K[📊 Power BI Dashboard]
 ```
 
 ## Scope of Work
