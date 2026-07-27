@@ -11,9 +11,9 @@
 
 # 🚀 Live Demo
 
-### 🌐 Try the application here
+### 🌐 Live Application
 
-**Credit Risk Analytics App**
+**Click here to launch the app**
 
 https://abc-credit-risk-model-bklzssce28hywrhsqcuxqh.streamlit.app/
 
